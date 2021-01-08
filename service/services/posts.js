@@ -2,7 +2,7 @@ const postsCollection = require('../collections/posts');
 const NotFoundError = require('../errors/notFound');
 
 /**
- * @description Post Service
+ * @description Posts Service
  *
  * @class PostsService
  */
@@ -45,7 +45,10 @@ class PostsService {
 	 * @memberof PostsService
 	 */
 	static createPost(data) {
-		return postsCollection.create({ title: data.title });
+		return postsCollection.create({
+			title: data.title,
+			text: data.text
+		});
 	}
 
 	/**
@@ -62,6 +65,10 @@ class PostsService {
 
 		if (data.title) {
 			post.title = data.title;
+		}
+
+		if (data.text) {
+			post.text = data.text;
 		}
 
 		return post;

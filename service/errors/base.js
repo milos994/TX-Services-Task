@@ -1,3 +1,9 @@
+/**
+ * @description Base Error Class.
+ *
+ * @class BaseError
+ * @extends {Error}
+ */
 class BaseError extends Error {
 	constructor(status, message) {
 		super(message);

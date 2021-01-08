@@ -1,11 +1,12 @@
 const Router = require('express').Router();
 const { v4: uuid, validate } = require('uuid');
 
-const PostsService = require('../services/posts')
+const PostsService = require('../services/posts');
+
 const BadRequestError = require('../errors/badRequest');
 const NotFoundError = require('../errors/notFound');
 
-Router.get('/posts', (req, res) => {
+Router.get('/posts', (req, res, next) => {
 	try {
 		const posts = PostsService.getAllPosts();
 
@@ -40,21 +41,22 @@ Router.post('/posts', (req, res, next) => {
 		const {
 			body: {
 				title,
-			}
+				text,
+			},
 		} = req;
 
 		if (!title) {
 			throw new BadRequestError('Title is required.')
 		}
 
-		const newPost = PostsService.createPost({ title });
+		const newPost = PostsService.createPost({ title, text });
 		res.send(newPost);
 	} catch (err) {
 		return next(err);
 	}
 });
 
-Router.patch('/posts/:postId', (req, res, next) => {
+Router.put('/posts/:postId', (req, res, next) => {
 	try {
 		const {
 			params: {
@@ -62,14 +64,15 @@ Router.patch('/posts/:postId', (req, res, next) => {
 			},
 			body: {
 				title,
-			}
+				text,
+			},
 		} = req;
 
 		if (!validate(postId)) {
 			throw new BadRequestError('PostId must be a valid uuid.')
 		}
 
-		const updatedPost = PostsService.updatePost(postId, { title });
+		const updatedPost = PostsService.updatePost(postId, { title, text });
 		res.send(updatedPost);
 	} catch (err) {
 		return next(err);

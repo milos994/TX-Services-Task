@@ -31,7 +31,7 @@ class BaseCollection {
 	 * @memberof BaseCollection
 	 */
 	findById(id) {
-		return this.entries.find((entry) => entry.id == id);
+		return this.entries.find((entry) => entry.id === id);
 	}
 
 	/**
@@ -56,7 +56,7 @@ class BaseCollection {
 	 * @memberof BaseCollection
 	 */
 	destroy(id) {
-		const index = this.entries.findIndex((entry) => entry.id == id);
+		const index = this.entries.findIndex((entry) => entry.id === id);
 
 		if (index === -1) {
 			return false;
