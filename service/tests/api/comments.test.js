@@ -24,14 +24,8 @@ describe('Tests for comment routes', () => {
 		});
 
 		it('GET /posts/:postId/comments - Should return list of post comments', async () => {
-			const body = {
-				name: 'Comment name',
-				text: 'Comment text'
-			};
-
 			const { body: response } = await request
 				.get(`/posts/${postId}/comments`)
-				.send(body)
 				.expect(200);
 			expect(response).to.be.an('array');
 
