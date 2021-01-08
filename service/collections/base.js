@@ -37,8 +37,8 @@ class BaseCollection {
 	/**
 	 * @description Create new entry.
 	 *
-	 * @param {Object} data Entry data.
-	 * @returns {Object} New Entry.
+	 * @param {Object} data Data for creating entry.
+	 * @returns {Object} New created entry.
 	 * @memberof BaseCollection
 	 */
 	create(data) {

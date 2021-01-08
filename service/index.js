@@ -9,8 +9,6 @@ app.use(bodyParser.json())
 
 app.use(postsController);
 
-
-
 app.use((err, req, res, next) => {
 	console.log(err)
 	if (err instanceof BaseError) {
