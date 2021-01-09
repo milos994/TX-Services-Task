@@ -36,7 +36,7 @@ Router.post('/posts/:postId/comments', (req, res, next) => {
 			},
 			body: {
 				name,
-				text
+				text,
 			},
 		} = req;
 
