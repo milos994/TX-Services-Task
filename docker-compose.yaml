@@ -1,0 +1,10 @@
+version: "3"
+services:
+  blog_server:
+    build: ./server/
+    ports:
+      - "8000:8000"
+  blog_client:
+    build: ./client/
+    ports:
+      - "3000:3000"
