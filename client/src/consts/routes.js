@@ -1,6 +1,6 @@
 const ROUTES = {
 	MAIN: '/',
-	BLOGPOST: '/blogposts'
+	BLOGPOST: '/blogposts/:id'
 }
 
 export { ROUTES }
