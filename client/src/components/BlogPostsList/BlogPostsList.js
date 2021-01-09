@@ -7,7 +7,7 @@ import CommentIcon from '@material-ui/icons/Comment';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
-import { ROUTES } from '../../consts/routes';
+import { ROUTES } from '../../constants/routes';
 
 const useStyles = makeStyles(() => ({
 	root: {

@@ -8,7 +8,7 @@ const Home = () => {
 	const [blogposts, setBlogposts] = useState([]);
 	const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
+	useEffect(() => {
 		setLoading(true);
 		getAllPosts().then(blogposts => {
 			setBlogposts(blogposts);
@@ -21,9 +21,11 @@ const Home = () => {
 		<CircularProgress />
 	}
 
-	return <PageLayout>
-		<BlogPostsList blogposts={blogposts} />
-	</PageLayout>
+	return (
+		<PageLayout>
+			<BlogPostsList blogposts={blogposts} />
+		</PageLayout>
+	)
 }
 
 export { Home }

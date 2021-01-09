@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { API_ROUTES } from "../consts/apiRoutes";
+import { API_ROUTES } from "../constants/apiRoutes";
 
 export const getAllPostComments = (postId) => axios.get(`${API_ROUTES.POSTS}/${postId}/comments`).then((res) => {
 	return res.data;
