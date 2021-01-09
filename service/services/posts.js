@@ -1,5 +1,6 @@
 const postsCollection = require('../collections/posts');
 const NotFoundError = require('../errors/notFound');
+const CommentsService = require('./comments');
 
 /**
  * @description Posts Service
@@ -11,11 +12,16 @@ class PostsService {
 	 * @description Get all posts.
 	 *
 	 * @static
-	 * @returns {Array} List of all available posts.
+	 * @returns {Array} List of all available posts with comment count for each post.
 	 * @memberof PostsService
 	 */
 	static getAllPosts() {
-		return postsCollection.findAll();
+		const posts = postsCollection.findAll();
+
+		return posts.map((post) => ({
+			...post,
+			commentsCount: CommentsService.getAllPostComments(post.id).length
+		}))
 	}
 
 	/**
