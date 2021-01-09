@@ -4,7 +4,6 @@ const { v4: uuid, validate } = require('uuid');
 const PostsService = require('../services/posts');
 
 const BadRequestError = require('../errors/badRequest');
-const NotFoundError = require('../errors/notFound');
 
 Router.get('/posts', (req, res, next) => {
 	try {

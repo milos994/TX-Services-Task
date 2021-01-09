@@ -5,7 +5,6 @@ const CommentsService = require('../services/comments');
 const PostsService = require('../services/posts');
 
 const BadRequestError = require('../errors/badRequest');
-const NotFoundError = require('../errors/notFound');
 
 Router.get('/posts/:postId/comments', (req, res, next) => {
 	try {
