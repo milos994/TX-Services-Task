@@ -24,7 +24,7 @@ After the build is completed open `localhost:3000` in your default browser.
 
 ## How to run tests?
 ```bash 
-$ docker-compose run --rm blog_server npm test
+$ docker-compose run --rm blog_server yarn test
 ```
 
 ---
